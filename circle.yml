@@ -9,8 +9,14 @@ machine:
 
 dependencies:
   override:
-    # Prepare RabbitMQ
-    - sudo rabbitmq-server start    
+    # Start RabbitMQ
+    - sudo rabbitmq-server start
+    # Create RabbitMQ user     
+    - sudo rabbitmqctl add_user myrabbituser myrabbitpass
+    # Grant RabbitMQ permission
+    - sudo rabbitmqctl set_permissions -p / myrabbituser ".*" ".*" ".*"
+    # Add admin tag to RabbitMQ user 
+    - sudo rabbitmqctl set_user_tags myrabbituser administrator
 
 test:
   override:
