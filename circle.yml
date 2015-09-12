@@ -10,7 +10,7 @@ machine:
 dependencies:
   override:
     # Prepare RabbitMQ
-    - rabbitmq-server start    
+    - sudo rabbitmq-server start    
 
 test:
   override:
