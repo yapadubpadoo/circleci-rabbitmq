@@ -9,6 +9,8 @@ machine:
 
 dependencies:
   override:
+    # Stop RabbitMQ (Just in case)
+    - sudo rabbitmq-server stop
     # Start RabbitMQ
     - sudo rabbitmq-server start
     # Create RabbitMQ user     
