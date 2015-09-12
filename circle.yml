@@ -1,0 +1,17 @@
+machine:
+  php:
+    version: 5.6.5
+  services:
+    - rabbitmq-server
+  hosts:
+    circlehost: 127.0.0.1
+    queueserver: 127.0.0.1
+
+dependencies:
+  override:
+    # Prepare RabbitMQ
+    - rabbitmq-server start    
+
+test:
+  override:
+    # 
